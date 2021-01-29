@@ -51,9 +51,6 @@ export default function Cart() {
             <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
               Your cart is empty
             </h2>
-            <p className="text-accents-6 px-10 text-center pt-2">
-              Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
-            </p>
           </div>
         ) : error ? (
           <div className="flex-1 px-4 flex flex-col justify-center items-center">
@@ -75,31 +72,31 @@ export default function Cart() {
             </h2>
           </div>
         ) : (
-          <div className="px-4 sm:px-6 flex-1">
-            <Text variant="pageHeading">My Cart</Text>
-            <Text variant="sectionHeading">Review your Order</Text>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-2 border-b border-accents-2">
-              {items.map((item) => (
-                <CartItem
-                  key={item.id}
-                  item={item}
-                  currencyCode={data?.currency.code!}
-                />
-              ))}
-            </ul>
-            <div className="my-6">
-              <Text>
-                Before you leave, take a look at these items. We picked them
-                just for you
+                <div className="px-4 sm:px-6 flex-1">
+                  <Text variant="pageHeading">My Cart</Text>
+                  <Text variant="sectionHeading">Review your Order</Text>
+                  <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-2 border-b border-accents-2">
+                    {items.map((item) => (
+                      <CartItem
+                        key={item.id}
+                        item={item}
+                        currencyCode={data?.currency.code!}
+                      />
+                    ))}
+                  </ul>
+                  <div className="my-6">
+                    <Text>
+                      Before you leave, take a look at these items. We picked them
+                      just for you
               </Text>
-              <div className="flex py-6 space-x-6">
-                {[1, 2, 3, 4, 5, 6].map((x) => (
-                  <div className="border border-accents-3 w-full h-24 bg-accents-2 bg-opacity-50 transform cursor-pointer hover:scale-110 duration-75" />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+                    <div className="flex py-6 space-x-6">
+                      {[1, 2, 3, 4, 5, 6].map((x) => (
+                        <div className="border border-accents-3 w-full h-24 bg-accents-2 bg-opacity-50 transform cursor-pointer hover:scale-110 duration-75" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
       </div>
       <div className="lg:col-span-4">
         <div className="flex-shrink-0 px-4 py-24 sm:px-6">
@@ -130,10 +127,10 @@ export default function Cart() {
                   Continue Shopping
                 </Button>
               ) : (
-                <Button href="/checkout" Component="a" width="100%">
-                  Proceed to Checkout
-                </Button>
-              )}
+                  <Button href="/checkout" Component="a" width="100%">
+                    Proceed to Checkout
+                  </Button>
+                )}
             </div>
           </div>
         </div>

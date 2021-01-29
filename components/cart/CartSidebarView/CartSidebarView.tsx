@@ -64,9 +64,6 @@ const CartSidebarView: FC = () => {
           <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
             Your cart is empty
           </h2>
-          <p className="text-accents-3 px-10 text-center pt-2">
-            Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
-          </p>
         </div>
       ) : error ? (
         <div className="flex-1 px-4 flex flex-col justify-center items-center">
@@ -88,49 +85,49 @@ const CartSidebarView: FC = () => {
           </h2>
         </div>
       ) : (
-        <>
-          <div className="px-4 sm:px-6 flex-1">
-            <h2 className="pt-1 pb-4 text-2xl leading-7 font-bold text-base tracking-wide">
-              My Cart
+              <>
+                <div className="px-4 sm:px-6 flex-1">
+                  <h2 className="pt-1 pb-4 text-2xl leading-7 font-bold text-base tracking-wide">
+                    My Cart
             </h2>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-t border-accents-3">
-              {items.map((item: any) => (
-                <CartItem
-                  key={item.id}
-                  item={item}
-                  currencyCode={data?.currency.code!}
-                />
-              ))}
-            </ul>
-          </div>
+                  <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accents-3 border-t border-accents-3">
+                    {items.map((item: any) => (
+                      <CartItem
+                        key={item.id}
+                        item={item}
+                        currencyCode={data?.currency.code!}
+                      />
+                    ))}
+                  </ul>
+                </div>
 
-          <div className="flex-shrink-0 px-4  py-5 sm:px-6">
-            <div className="border-t border-accents-3">
-              <ul className="py-3">
-                <li className="flex justify-between py-1">
-                  <span>Subtotal</span>
-                  <span>{subTotal}</span>
-                </li>
-                <li className="flex justify-between py-1">
-                  <span>Taxes</span>
-                  <span>Calculated at checkout</span>
-                </li>
-                <li className="flex justify-between py-1">
-                  <span>Estimated Shipping</span>
-                  <span className="font-bold tracking-wide">FREE</span>
-                </li>
-              </ul>
-              <div className="flex justify-between border-t border-accents-3 py-3 font-bold mb-10">
-                <span>Total</span>
-                <span>{total}</span>
-              </div>
-            </div>
-            <Button href="/checkout" Component="a" width="100%">
-              Proceed to Checkout
+                <div className="flex-shrink-0 px-4  py-5 sm:px-6">
+                  <div className="border-t border-accents-3">
+                    <ul className="py-3">
+                      <li className="flex justify-between py-1">
+                        <span>Subtotal</span>
+                        <span>{subTotal}</span>
+                      </li>
+                      <li className="flex justify-between py-1">
+                        <span>Taxes</span>
+                        <span>Calculated at checkout</span>
+                      </li>
+                      <li className="flex justify-between py-1">
+                        <span>Estimated Shipping</span>
+                        <span className="font-bold tracking-wide">FREE</span>
+                      </li>
+                    </ul>
+                    <div className="flex justify-between border-t border-accents-3 py-3 font-bold mb-10">
+                      <span>Total</span>
+                      <span>{total}</span>
+                    </div>
+                  </div>
+                  <Button href="/checkout" Component="a" width="100%">
+                    Proceed to Checkout
             </Button>
-          </div>
-        </>
-      )}
+                </div>
+              </>
+            )}
     </div>
   )
 }

@@ -10,7 +10,7 @@
     }
 
     & .productImage {
-      transform: scale(1.2625);
+      transform: scale(1.15);
     }
 
     & .productTitle > span,
@@ -132,5 +132,5 @@
 }
 
 .productImage {
-  @apply transform transition-transform duration-500 object-cover scale-120;
+  @apply transform transition-transform duration-500 object-cover scale-90;
 }
